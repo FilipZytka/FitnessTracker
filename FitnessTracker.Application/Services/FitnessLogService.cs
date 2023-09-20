@@ -14,7 +14,7 @@ namespace FitnessTracker.Application.Services
         {
             _log = log;
         }
-        public async Task Create(Entities.Entities.FitnessTracker fitnessTracker)
+        public async Task CreateLog(Entities.Entities.FitnessTracker fitnessTracker)
         {
             await _log.Create(fitnessTracker);
 
