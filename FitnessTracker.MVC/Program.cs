@@ -1,12 +1,22 @@
+using FitnessTracker.Infrastracture.Data_Seeders;
 using FitnessTracker.Infrastracture.Database;
 using FitnessTracker.Infrastracture.Extension;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDatabase(builder.Configuration);
+
+
 var app = builder.Build();
+
+var scope = app.Services.CreateScope();
+var seed = scope.ServiceProvider.GetRequiredService<FitnessTrackerSeeder>();
+
+await seed.SeedData();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FitnessTracker.Infrastracture.Database;
 using Microsoft.EntityFrameworkCore;
+using FitnessTracker.Infrastracture.Data_Seeders;
 
 namespace FitnessTracker.Infrastracture.Extension
 {
@@ -17,6 +18,10 @@ namespace FitnessTracker.Infrastracture.Extension
         {
             services.AddDbContext<FitnessTrackerDbContext>(options => options.UseSqlServer(
                 configuration.GetConnectionString("FitnessTrackerConnectionString")));
+
+            services.AddScoped<FitnessTrackerSeeder>();
+        
+        
         }
     }
 }

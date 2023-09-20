@@ -15,7 +15,7 @@ namespace FitnessTracker.Infrastracture.Data_Seeders
             _dbContext = dbContext;
             
         }
-        public async Task Seed()
+        public async Task SeedData()
         {
             if(await _dbContext.Database.CanConnectAsync())
             {
@@ -23,9 +23,13 @@ namespace FitnessTracker.Infrastracture.Data_Seeders
                 {
                     var training1 = new Entities.Entities.FitnessTracker()
                     {
-                     
-
+                        Name = "Push ups",
+                        Description = "Short brakes(100). It was great.",
+                        Sets = 3,
+                        Reps = "40,29,26",
                     };
+                    _dbContext.FitnessTrackers.Add(training1);
+                    await _dbContext.SaveChangesAsync();
                    
 
                 }
