@@ -12,7 +12,7 @@ namespace FitnessTracker.Entities.Entities
         public string Name { get; set; } = default!;
         public string? Description { get; set; }
         public int Sets { get; set; } = default!;
-        public int Reps { get; set; } = default!;
+        public string Reps { get; set; } = default!;
         public DateTime? CreatedTime { get; set; } = DateTime.UtcNow;
         
     }
