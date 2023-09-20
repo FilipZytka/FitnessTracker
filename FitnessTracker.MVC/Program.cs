@@ -1,6 +1,7 @@
 using FitnessTracker.Infrastracture.Data_Seeders;
 using FitnessTracker.Infrastracture.Database;
 using FitnessTracker.Infrastracture.Extension;
+using FitnessTracker.Application.Extension;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDatabase(builder.Configuration);
+builder.Services.AddApplication();
 
 
 var app = builder.Build();

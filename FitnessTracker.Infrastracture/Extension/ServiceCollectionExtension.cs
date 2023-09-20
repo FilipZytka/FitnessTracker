@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using FitnessTracker.Infrastracture.Database;
 using Microsoft.EntityFrameworkCore;
 using FitnessTracker.Infrastracture.Data_Seeders;
+using FitnessTracker.Entities.Interfaces;
+using FitnessTracker.Infrastracture.Logs;
 
 namespace FitnessTracker.Infrastracture.Extension
 {
@@ -20,6 +22,8 @@ namespace FitnessTracker.Infrastracture.Extension
                 configuration.GetConnectionString("FitnessTrackerConnectionString")));
 
             services.AddScoped<FitnessTrackerSeeder>();
+
+            services.AddScoped<IFitnessLog, FitnessLog>();
         
         
         }
