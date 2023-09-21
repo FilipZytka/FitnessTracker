@@ -11,6 +11,11 @@ namespace FitnessTracker.MVC.Controllers
         {
             _fitnessLogService = fitnessLogService;
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task <IActionResult> CreateLog(Entities.Entities.FitnessTracker log)
         {
