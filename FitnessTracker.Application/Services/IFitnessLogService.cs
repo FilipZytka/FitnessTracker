@@ -2,6 +2,6 @@
 {
     public interface IFitnessLogService
     {
-        Task CreateLog(Entities.Entities.FitnessTracker fitnessTracker);
+        Task Create(Entities.Entities.FitnessTracker fitnessTracker);
     }
 }

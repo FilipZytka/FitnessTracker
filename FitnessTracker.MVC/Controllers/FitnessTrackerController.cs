@@ -17,10 +17,15 @@ namespace FitnessTracker.MVC.Controllers
             return View();
         }
         [HttpPost]
-        public async Task <IActionResult> CreateLog(Entities.Entities.FitnessTracker log)
+        public async Task <IActionResult> Create(Entities.Entities.FitnessTracker log)
         {
-            await _fitnessLogService.CreateLog(log);
-            return RedirectToAction(nameof(CreateLog));
+            if (!ModelState.IsValid)
+            {
+                return View(log);
+
+            } 
+            await _fitnessLogService.Create(log);
+            return RedirectToAction(nameof(Create));
 
         }
     }
