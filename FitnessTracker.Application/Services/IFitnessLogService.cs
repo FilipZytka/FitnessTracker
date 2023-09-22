@@ -1,7 +1,11 @@
-﻿namespace FitnessTracker.Application.Services
+﻿using FitnessTracker.Entities.Entities;
+
+namespace FitnessTracker.Application.Services
 {
     public interface IFitnessLogService
     {
-        Task Create(Entities.Entities.FitnessTracker fitnessTracker);
+        Task CreateService(Entities.Entities.FitnessTracker fitnessTracker);
+        Task<IEnumerable<Entities.Entities.FitnessTracker>> GetAll();
+
     }
 }

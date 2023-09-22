@@ -8,6 +8,7 @@ namespace FitnessTracker.Entities.Interfaces
 {
     public interface IFitnessLog
     {
-        Task Create(Entities.FitnessTracker log);
+        Task CreateLog(Entities.FitnessTracker log);
+        Task<IEnumerable<Entities.FitnessTracker>> GetAll();
     }
 }

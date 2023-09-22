@@ -3,33 +3,39 @@
 @model FitnessTracker
 <h2>Exercise Log Creation</h2>
 
-<hr />
+@{
+    ViewData["Title"] = "Training";
+}
+
+
 
 <div class="row">
     <div class=" col-md-4"></div>
     <form action="/FitnessTracker/Create" method="post">
         <div class="form-group mb-3">
-            <label class="control-label" asp-for="Name">Name</label>
+            <label class="control-label " asp-for="Name"><span class="category-log">Name </span></label>
             <input class="form-control" type="text" asp-for ="Name"/>
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
-        <div class="form-group mb-3">
-            <label class="control-label" asp-for="Description">Description</label>
-            <input class="form-control" type="text" asp-for="Description" />
-           
-        </div>
+       
 
         <div class="form-group mb-3">
-            <label class="control-label" asp-for="Sets">Sets</label>
+            <label class="control-label" asp-for="Sets"><span class="category-log">Sets </span></label>
             <input class="form-control" type="text" asp-for="Sets" />
             <span asp-validation-for="Sets" class="text-danger"></span>
         </div>
 
         <div class="form-group mb-3">
-            <label class="control-label" asp-for="Reps">Reps</label>
+            <label class="control-label" asp-for="Reps"><span class="category-log">Reps </span></label>
             <input class="form-control" type="text" asp-for="Reps" />
             <span asp-validation-for="Reps" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="control-label" asp-for="Description"><span class="category-log">Description </span></label>
+            <input class="form-control" type="text" asp-for="Description" />
+
         </div>
 
         <div class="form-group mb-3">

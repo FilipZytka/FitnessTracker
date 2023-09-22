@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FitnessTracker.Entities.Entities.FitnessTracker>
+
+@{
+    ViewData["Title"] = "History";
+}
+
+<h2>History</h2>
+<p class="hint">Your history of  recent exercises</p>
+
+
+
+
+<table class="content-table">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                Exercise
+            </th>
+            <th>
+                Sets
+            </th>
+            <th>
+                Reps
+            </th>
+            <th>
+                Published
+            </th>
+            <th>
+                Details
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.Sets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reps)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedTime)
+            </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<p>
+    <a class="hint2" asp-action="Create">Click here to add a new log</a>
+</p>
+

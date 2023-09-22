@@ -11,8 +11,13 @@ namespace FitnessTracker.MVC.Controllers
         {
             _fitnessLogService = fitnessLogService;
         }
+        public async Task<IActionResult> History()
+        {
+            var fitnessLog =  await _fitnessLogService.GetAll();
+            return View(fitnessLog);
+        }
 
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -24,7 +29,7 @@ namespace FitnessTracker.MVC.Controllers
                 return View(log);
 
             } 
-            await _fitnessLogService.Create(log);
+            await _fitnessLogService.CreateService(log);
             return RedirectToAction(nameof(Create));
 
         }

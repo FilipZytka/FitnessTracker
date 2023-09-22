@@ -1,5 +1,6 @@
 ﻿using FitnessTracker.Entities.Interfaces;
 using FitnessTracker.Infrastracture.Database;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,13 @@ namespace FitnessTracker.Infrastracture.Logs
         {
             _dBcontext = dbContext;
         }
-        public async Task Create(Entities.Entities.FitnessTracker log)
+        public async Task CreateLog(Entities.Entities.FitnessTracker log)
         {
             _dBcontext.Add(log);
             await _dBcontext.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Entities.Entities.FitnessTracker>> GetAll()
+            => await _dBcontext.FitnessTrackers.ToListAsync();
     }
 }

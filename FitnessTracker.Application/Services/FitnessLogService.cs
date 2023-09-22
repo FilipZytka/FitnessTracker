@@ -14,10 +14,17 @@ namespace FitnessTracker.Application.Services
         {
             _log = log;
         }
-        public async Task Create(Entities.Entities.FitnessTracker fitnessTracker)
+        public async Task CreateService(Entities.Entities.FitnessTracker fitnessTracker)
         {
-            await _log.Create(fitnessTracker);
+            await _log.CreateLog(fitnessTracker);
 
+        }
+
+        public async Task<IEnumerable<Entities.Entities.FitnessTracker>> GetAll()
+        {
+            var fitnessLogs = await _log.GetAll();
+
+            return fitnessLogs;
         }
     }
 }

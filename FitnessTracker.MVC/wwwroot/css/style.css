@@ -14,6 +14,8 @@ body {
     background-position: center;
     position: relative;
     overflow: hidden;
+
+    
 }
 
 
@@ -54,20 +56,14 @@ button {
     font-size: 3rem;
     margin: 10px 0 30px;
     line-height: 8rem;
-    
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
-h1{
+h1 {
     font-size: 8rem;
     margin: 10px 0 30px;
     line-height: 4rem;
-}
-.side-bar {
-    width: 50px;
-    height: 100vh;
-    background: linear-gradient(#000000, #262626);
-    position: absolute;
-    right: 0;
-    top: 0;
+    text-shadow: 2rem;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .menu{
@@ -75,13 +71,16 @@ h1{
     width: 2rem;
     margin: 40px auto 0;
     cursor: pointer;
+    
 
 }
 
 .menu-bar {
     background: #f2f2f2;
     text-align: center;
-
+    border-bottom: 2px solid black;
+    text-align: center;
+    font-weight:bold;
 }
 .menu-bar ul {
     display: inline-flex;
@@ -90,19 +89,24 @@ h1{
 }
 
 .menu-bar ul li {
-    width: 120px;
-    margin: 15px;
-    padding: 15px;
-}
+    width: 10rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border: 0px solid black;
+    border-radius: 20px;
+        
+        
+    }
 .menu-bar ul li a{
     text-decoration:none;
     color: #000;
 }
 
-.active, .menu-bar ul li:hover {
+.active, .menu-bar ul li a:hover {
     background: #e6e6e6;
-    border-radius:3px;
-}
+    border-radius: 10px;
+    padding: 1rem;
+    }
 
 label{
     color: white;
@@ -110,7 +114,75 @@ label{
 
 h2 {
     margin-top: 2rem;
-    color: white
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
+.hint {
+    margin-top: 0,5rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.hint2 {
+    margin-top: 0.5rem; /* Correct the comma to a period */
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: block; /* Change to a block-level element */
+    text-align: center; /* Center text horizontally */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center element precisely */
+    text-shadow: 2rem;
+}
+
+.category-log {
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 0 auto; /* Center horizontally */
+    font-size: 0.6em;
+    min-width: 400px;
+    border: 1px solid black;
+    position: relative;
+    top: 50%;
+    transform: translateY(0%);
+}
+
+
+.content-table thead tr {
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+}
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    
+    
+}
+.content-table tbody tr {
+    background-color: #DBDBDB;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #C4C4C4;
+}
+
+
+
 
 
